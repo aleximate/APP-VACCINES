@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+<div class="conteiner">
+    <div class="imagen">
+        <img src="https://i.pinimg.com/564x/cd/7b/41/cd7b418cc862d94b43a7c1119e2559c2.jpg" alt="">
+    </div>
+    <div class="formulario">
+            <form (ngSubmit) = "buscar()">
+                <h2 >Identifícate para Consultas</h2>
+                <label for="campo2">Número de Documento</label>
+                <input type="text"
+                id="dni"
+                placeholder="Ingresa tu numero de documento"
+                [(ngModel)]="persons.dni"
+                name ="dni"
+                #dni="ngModel">
+                <br><br>
+                <div class="button-container" >
+                  <button class = "btn btn-success" type="submit">Submit</button>
+                </div>
+            </form>
+    </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,36 @@
+<button class="btn btn-primary" routerLink="/opciones">Regresar</button>
+<div class="container">
+  <h1 h3 class="text-center">PERSONAS</h1>
+  <button class="btn btn-primary" routerLink="/registrar-personas">Añadir</button>
+  <table class="mt-5 table table-hover">
+    <thead>
+      <tr>
+        <th>DNI</th>
+        <th>NAME</th>
+        <th>LASTNAME</th>
+        <th>EMAIL</th>
+        <th>JOB</th>
+        <th>BIRTHDAY</th>
+        <th>NATIONALITY</th>
+        <th>SEX</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor=" let person of persons ">
+          <td>{{ person.dni }}</td>
+          <td>{{ person.name }}</td>
+          <td>{{ person.lastname }}</td>
+          <td>{{ person.email }}</td>
+          <td>{{ person.job }}</td>
+          <td>{{ person.birthday }}</td>
+          <td>{{ person.nationality }}</td>
+          <td>{{ person.sex }}</td>
+          <td>
+            <button (click)="update(person.dni)" class="btn btn-info">UPDATE</button>
+            <button (click)="delete(person.dni)" class="btn btn-danger">DELETE</button>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+

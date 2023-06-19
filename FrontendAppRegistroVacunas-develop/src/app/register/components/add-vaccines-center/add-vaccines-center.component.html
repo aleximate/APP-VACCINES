@@ -1,0 +1,56 @@
+<button class="btn btn-primary" routerLink="/centros">Regresar</button>
+<div class="container">
+  <h3 class="text-center">Registro de Centros</h3>
+  <form (ngSubmit) = "onSubmitForm()">
+    <div class="form-group">
+      <label>NAME: </label>
+      <input type="text"
+      class ="form-control"
+      id = "name"
+      [(ngModel)] = "vaccinesCenter.name"
+      required
+      minlength="5"
+      maxlength="30"
+      name = "name"
+      #name="ngModel">
+  </div>
+  <div class="alert alert-danger" *ngIf= "name.invalid && (name.dirty || name.touched)">
+    <div *ngIf ="name.errors?.['required']">
+      Write a center please
+    </div>
+    <div *ngIf = "name.errors?.['minlength']">
+      DNI must have at least 5 characthers
+    </div>
+    <div *ngIf = "name.errors?.['maxlength']">
+      The name must have at most 30 characthers
+    </div>
+  </div>
+
+    <div class="form-group">
+        <label>ADDRESS: </label>
+        <input type="text"
+        class ="form-control"
+        id = "name"
+        [(ngModel)] = "vaccinesCenter.address"
+        required
+        minlength="10"
+        maxlength="50"
+        name = "address"
+        #address="ngModel">
+    </div>
+    <div class="alert alert-danger" *ngIf= "address.invalid && (address.dirty || address.touched)">
+      <div *ngIf ="address.errors?.['required']">
+        Write address please
+      </div>
+      <div *ngIf = "address.errors?.['minlength']">
+        The name must have at least 4 characthers
+      </div>
+      <div *ngIf = "address.errors?.['maxlength']">
+        The name must have at most 10 characthers
+      </div>
+    </div>
+    <button class = "btn btn-success" type="submit">Submit</button>
+
+</form>
+
+

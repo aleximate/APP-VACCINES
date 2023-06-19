@@ -1,0 +1,187 @@
+<button class="btn btn-primary" routerLink="/personas">Regresar</button>
+<div class="container">
+  <h3 class="text-center">Actualizar Personas</h3>
+  <form (ngSubmit) = "onSubmit()">
+    <div class="form-group">
+      <label>DNI: </label>
+      <input type="text"
+      class ="form-control"
+      id = "dni"
+      [(ngModel)] ="persons.dni"
+      required
+      minlength="2"
+      maxlength="8"
+      name = "dni"
+      #dni="ngModel">
+  </div>
+  <div class="alert alert-danger" *ngIf= "dni.invalid && (dni.dirty || dni.touched)">
+    <div *ngIf ="dni.errors?.['required']">
+      Write you DNI please
+    </div>
+    <div *ngIf = "dni.errors?.['minlength']">
+      DNI must have at least 8 characthers
+    </div>
+    <div *ngIf = "dni.errors?.['maxlength']">
+      The name must have at most 8 characthers
+    </div>
+  </div>
+
+    <div class="form-group">
+        <label>Name: </label>
+        <input type="text"
+        class ="form-control"
+        id = "name"
+        [(ngModel)]="persons.name"
+        required
+        minlength="4"
+        maxlength="50"
+        name = "name"
+        #name="ngModel">
+    </div>
+    <div class="alert alert-danger" *ngIf= "name.invalid && (name.dirty || name.touched)">
+      <div *ngIf ="name.errors?.['required']">
+        Write a name please
+      </div>
+      <div *ngIf = "name.errors?.['minlength']">
+        The name must have at least 4 characthers
+      </div>
+      <div *ngIf = "name.errors?.['maxlength']">
+        The name must have at most 10 characthers
+      </div>
+    </div>
+
+    <div class="form-group">
+        <label>Lastname: </label>
+        <input type="text"
+        class ="form-control"
+        id = "lastname"
+        [(ngModel)] = "persons.lastname"
+        required
+        minlength="2"
+        maxlength="20"
+        name = "lastname"
+        #lastname="ngModel">
+    </div>
+
+    <div class="alert alert-danger" *ngIf= "lastname.invalid && (lastname.dirty || lastname.touched)">
+      <div *ngIf ="lastname.errors?.['required']">
+        Write you lastname please
+      </div>
+      <div *ngIf = "lastname.errors?.['minlength']">
+        Must have at least 2 characthers
+      </div>
+      <div *ngIf = "lastname.errors?.['maxlength']">
+        Must have at most 20 characthers
+      </div>
+    </div>
+
+
+    <div class="form-group">
+        <label>email:</label>
+        <input type="text"
+        class ="form-control"
+        id = "email"
+        [(ngModel)] = "persons.email"
+        pattern ="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"
+        required
+        name = "email"
+        #email="ngModel">
+    </div>
+    <div class="alert alert-danger" *ngIf= "email.invalid && (email.dirty || email.touched)">
+      <div *ngIf ="email.errors?.['required']">
+        Write your email please
+      </div>
+      <div *ngIf = "email.errors?.['pattern']">
+        Please write an email in this format: tupapi@gmail.com
+      </div>
+    </div>
+
+    <div class="form-group">
+        <label>Job:</label>
+        <input type="text"
+        class ="form-control"
+        id = "job"
+        [(ngModel)] = "persons.job"
+        name = "job"
+        required
+        minlength="3"
+        maxlength="20"
+        name = "job"
+        #job="ngModel">
+    </div>
+    <div class="alert alert-danger" *ngIf= "job.invalid && (job.dirty || job.touched)">
+      <div *ngIf ="job.errors?.['required']">
+        Write you job please
+      </div>
+      <div *ngIf = "job.errors?.['minlength']">
+        Must have at least 3 characthers
+      </div>
+      <div *ngIf = "job.errors?.['maxlength']">
+        Must have at most 20 characthers
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Birthday:</label>
+      <input type="date"
+      class ="form-control"
+      id = "birthday"
+      [(ngModel)] = "persons.birthday"
+      name ="birthday"
+      required
+      #birthday="ngModel">
+  </div>
+  <div class="alert alert-danger" *ngIf= "birthday.invalid && (birthday.dirty || birthday.touched)">
+    <div *ngIf ="birthday.errors?.['required']">
+      Select a date please
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Nationality: </label>
+    <input type="text"
+    class ="form-control"
+    id = "nationality"
+    [(ngModel)] = "persons.nationality"
+    name = "nationality"
+    required
+    minlength="3"
+    maxlength="20"
+    #nationality="ngModel">
+  </div>
+  <div class="alert alert-danger" *ngIf= "nationality.invalid && (nationality.dirty || nationality.touched)">
+    <div *ngIf ="nationality.errors?.['required']">
+      Write your nationality
+    </div>
+    <div *ngIf = "nationality.errors?.['minlength']">
+      Must have at least 3 characthers
+    </div>
+    <div *ngIf = "nationality.errors?.['maxlength']">
+      Must have at most 20 characthers
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Sex: </label>
+    <input type="text"
+    class ="form-control"
+    id = "sex"
+    [(ngModel)] = "persons.sex"
+    name = "sex"
+    required
+    maxlength="1"
+    #sex="ngModel">
+  </div>
+  <div class="alert alert-danger" *ngIf= "sex.invalid && (sex.dirty || sex.touched)">
+    <div *ngIf ="sex.errors?.['required']">
+      Write your sex
+    </div>
+    <div *ngIf = "sex.errors?.['minlength']">
+      Must have 1 characther
+    </div>
+  </div>
+    <button class = "btn btn-success" type="submit">Submit</button>
+
+</form>
+
+
+

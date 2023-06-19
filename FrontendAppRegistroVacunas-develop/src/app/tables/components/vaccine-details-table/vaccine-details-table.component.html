@@ -1,0 +1,30 @@
+<button class="btn btn-primary" routerLink="/opciones">Regresar</button>
+<div class="container">
+  <h1 h3 class="text-center">DETALLES DE VACUNAS</h1>
+  <button class="btn btn-primary" routerLink="/registrar-detalle de vacunacion">Añadir</button>
+  <table class="mt-5 table table-hover">
+    <thead>
+      <tr>
+        <th>DATE</th>
+        <th>PLACE</th>
+        <th>PERSON</th>
+        <th>CENTER VACCINATION</th>
+        <th>VACCINE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor=" let i of vaccineDetails ">
+          <td>{{ i.date }}</td>
+          <td>{{ i.place }}</td>
+          <td>{{ i.persons.name }}</td>
+          <td>{{ i.vaccinationCenter.name }}</td>
+          <td>{{ i.vaccines.name }}</td>
+          <td>
+            <button (click)="update(i.id)" class="btn btn-info">UPDATE</button>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+

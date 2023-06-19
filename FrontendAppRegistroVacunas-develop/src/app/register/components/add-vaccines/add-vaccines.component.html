@@ -1,0 +1,141 @@
+<button class="btn btn-primary" routerLink="/vacunas">Regresar</button>
+<div class="container">
+  <h3 class="text-center">Registro de Vacunas</h3>
+  <form (ngSubmit) = "onSubmitForm()" #vaccinesForm = "ngForm">
+
+    <div class="form-group">
+        <label>Name: </label>
+        <input type="text"
+        class ="form-control"
+        id = "name"
+        [(ngModel)] = "vaccines.name"
+        required
+        minlength="4"
+        maxlength="50"
+        name = "name"
+        #name="ngModel">
+    </div>
+    <div class="alert alert-danger" *ngIf= "name.invalid && (name.dirty || name.touched)">
+      <div *ngIf ="name.errors?.['required']">
+        Write a name please
+      </div>
+      <div *ngIf = "name.errors?.['minlength']">
+        The name must have at least 4 characthers
+      </div>
+      <div *ngIf = "name.errors?.['maxlength']">
+        The name must have at most 10 characthers
+      </div>
+    </div>
+
+    <div class="form-group">
+        <label>Made in: </label>
+        <input type="text"
+        class ="form-control"
+        id = "madeIn"
+        [(ngModel)] = "vaccines.madeIn"
+        required
+        minlength="3"
+        maxlength="10"
+        name = "madeIn"
+        #madeIn="ngModel">
+    </div>
+
+    <div class="alert alert-danger" *ngIf= "madeIn.invalid && (madeIn.dirty || madeIn.touched)">
+      <div *ngIf ="madeIn.errors?.['required']">
+        Write a country please
+      </div>
+      <div *ngIf = "madeIn.errors?.['minlength']">
+        The name must have at least 3 characthers
+      </div>
+      <div *ngIf = "madeIn.errors?.['maxlength']">
+        The name must have at most 10 characthers
+      </div>
+    </div>
+
+
+    <div class="form-group">
+        <label>Made by:</label>
+        <input type="text"
+        class ="form-control"
+        id = "madeBy"
+        [(ngModel)] = "vaccines.madeBy"
+        name = "madeBy"
+        required
+        minlength="4"
+        maxlength="50"
+        name = "madeBy"
+        #madeBy="ngModel">
+    </div>
+    <div class="alert alert-danger" *ngIf= "madeIn.invalid && (madeIn.dirty || madeIn.touched)">
+      <div *ngIf ="madeIn.errors?.['required']">
+        Write a country please
+      </div>
+      <div *ngIf = "madeIn.errors?.['minlength']">
+        The name must have at least 3 characthers
+      </div>
+      <div *ngIf = "madeIn.errors?.['maxlength']">
+        The name must have at most 10 characthers
+      </div>
+    </div>
+
+    <div class="form-group">
+        <label>Against to:</label>
+        <input type="text"
+        class ="form-control"
+        id = "againstTo"
+        [(ngModel)] = "vaccines.againstTo"
+        name = "againstTo"
+        required
+        minlength="3"
+        maxlength="20"
+        name = "againstTo"
+        #againstTo="ngModel">
+    </div>
+
+    <div class="alert alert-danger" *ngIf= "againstTo.invalid && (againstTo.dirty || againstTo.touched)">
+      <div *ngIf ="againstTo.errors?.['required']">
+        Write a country please
+      </div>
+      <div *ngIf = "againstTo.errors?.['minlength']">
+        The name must have at least 3 characthers
+      </div>
+      <div *ngIf = "againstTo.errors?.['maxlength']">
+        The name must have at most 10 characthers
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Creation date:</label>
+      <input type="date"
+      class ="form-control"
+      id = "creationDate"
+      [(ngModel)] = "vaccines.creationDate"
+      name = "creationDate"
+      required
+      #creationDate="ngModel">
+  </div>
+  <div class="alert alert-danger" *ngIf= "creationDate.invalid && (creationDate.dirty || creationDate.touched)">
+    <div *ngIf ="creationDate.errors?.['required']">
+      Select a date please
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Due date:</label>
+    <input type="date"
+    class ="form-control"
+    id = "dueDate"
+    [(ngModel)] = "vaccines.dueDate"
+    name = "dueDate"
+    required
+    #dueDate="ngModel">
+  </div>
+  <div class="alert alert-danger" *ngIf= "dueDate.invalid && (dueDate.dirty || dueDate.touched)">
+    <div *ngIf ="dueDate.errors?.['required']">
+      Select a date please
+    </div>
+  </div>
+    <button class = "btn btn-success" type="submit">Submit</button>
+
+</form>
+</div>

@@ -1,0 +1,32 @@
+<button class="btn btn-primary" routerLink="/opciones">Regresar</button>
+<div class="container">
+<h1 h3 class="text-center">VACUNAS</h1>
+<button class="btn btn-primary" routerLink="/registrar-vacunas">Añadir</button>
+<table class="mt-5 table table-hover">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>MADE IN</th>
+      <th>MADE BY</th>
+      <th>AGAINST TO</th>
+      <th>CREATION DATE</th>
+      <th>DUE DATE</th>
+      <th>ACTIONS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor=" let vaccine of vaccines ">
+        <td>{{ vaccine.name }}</td>
+        <td>{{ vaccine.madeIn }}</td>
+        <td>{{ vaccine.madeBy }}</td>
+        <td>{{ vaccine.againstTo }}</td>
+        <td>{{ vaccine.creationDate }}</td>
+        <td>{{ vaccine.dueDate }}</td>
+        <td>
+          <button (click)="update(vaccine.id)" class="btn btn-info">UPDATE</button>
+          <button (click)="delete(vaccine.id)" class="btn btn-danger">DELETE</button>
+        </td>
+    </tr>
+  </tbody>
+</table>
+</div>

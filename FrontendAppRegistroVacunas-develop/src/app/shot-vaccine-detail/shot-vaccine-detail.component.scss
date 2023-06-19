@@ -1,0 +1,34 @@
+.container{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container_1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  height: auto;
+  background-color: white;
+  border-radius: 40px;
+  border: 5px skyblue solid;
+}
+i{
+  font-size: 60px;
+}
+
+.title{
+  font-weight: bold;
+  text-decoration: underline;
+}
+.container_2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+p{
+  font-size: 17px;
+}

@@ -1,0 +1,47 @@
+<button class="btn btn-primary" routerLink="/vacunas">Regresar</button>
+<div class="container">
+  <h3 class="text-center">Actualizar Vacunas</h3>
+  <form (ngSubmit) = "onSubmit()">
+
+    <div class="form-group">
+        <label>Name: </label>
+        <input type="text" class ="form-control" id = "name"
+            [(ngModel)] = "vaccines.name" name = "name">
+    </div>
+
+    <div class="form-group">
+        <label>Made in: </label>
+        <input type="text" class ="form-control" id = "madeIn"
+            [(ngModel)] = "vaccines.madeIn" name = "madeIn">
+    </div>
+
+    <div class="form-group">
+        <label>Made by:</label>
+        <input type="text" class ="form-control" id = "madeBy"
+            [(ngModel)] = "vaccines.madeBy" name = "madeBy">
+    </div>
+
+    <div class="form-group">
+        <label>Against to:</label>
+        <input type="text" class ="form-control" id = "againstTo"
+            [(ngModel)] = "vaccines.againstTo" name = "againstTo">
+    </div>
+
+    <div class="form-group">
+      <label>Creation date:</label>
+      <input type="date" class ="form-control" id = "creationDate"
+          [(ngModel)] = "vaccines.creationDate" name = "creationDate">
+  </div>
+
+  <div class="form-group">
+    <label>Due date:</label>
+    <input type="date" class ="form-control" id = "dueDate"
+        [(ngModel)] = "vaccines.dueDate" name = "dueDate">
+</div>
+
+    <button class = "btn btn-success" type="submit">Submit</button>
+
+</form>
+</div>
+
+

@@ -1,0 +1,27 @@
+.container{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.container_1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color:white;
+  background-color: #37F3FF;
+  width: 200px;
+  height: 250px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+p{
+  text-align: center;
+}
